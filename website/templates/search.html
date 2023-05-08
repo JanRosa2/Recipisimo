@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title%}
+  What to cook
+{% endblock %}
+
+{% block body %}
+
+{% endblock %}
+
+{% block main %}
+<main class="container text-center">
+  <div class="row justify-content-center mb-5">
+    <div class="col-sm-10 col-md-9 col-lg-8">
+      <div class="card card-search">
+        <div class="card-header">
+          <h2 class="card-title mt-3 mb-4">Input the ingredients</h2>
+        </div>
+        <div class="card-body">
+          <form action="/search" method="post">
+            <div class="row justify-content-center">
+              <div class="col-10 col-lg-8 mb-3">
+                <input type="text" class="form-control form-control-lg" name="ingredients" id="ingredients" placeholder="e.g. milk, bacon, cheese">
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-5 col-lg-6 mb-3">
+                  <div class="form-check">
+                    <label class="form-check-label text-white" for="minimaze">Minimize missing ingredients first</label>
+                    <input type="checkbox" class="form-check-input" id="minimaze" name="minimaze" value="2">
+                  </div>
+                </div>
+              </div> 
+            </div>
+            <div class="row justify-content-center">
+              <div class="d-grid col-8 col-lg-6 mb-3">
+                <button type="submit" class="btn btn-primary btn-lg" name="submit" id="submit">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-lg-3 justify-content-center">
+    {% for recipe in recipes %}
+    <div class="col">
+        <div class="card card-effect mb-3">
+            <div class="card-header">
+                <h4 class="mb-3 mt-3 flex-grow-1">{{ recipe.title }}</h4>
+            </div>
+            <div class="card-body">
+                <img class="card-img mb-3" src="{{ recipe.image }}" alt="Image of {{ recipe.title }}">
+            </div>
+            <div class="card-footer">
+                <article class="card-text text-center mb-5">
+                    <p class="mb-3"><strong>Ingredients you have:</strong> {{ recipe.used }}</p>
+                    <p class="mb-3"><strong>Ingredients you are missing:</strong> {{ recipe.missing }}</p>
+                </article>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+</main>
+{% endblock %}
+

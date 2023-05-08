@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Recipisimo
+{% endblock %}
+
+{% block body %} 
+
+{% endblock %}
+
+{% block main %}
+<main class="container mb-5">
+    <div class="recipe-example">
+        <div class="card card-main">
+            <div class="card-header">
+                <h1 class="card-title text-center mt-5">Do you know, what to cook</h1>
+                <h1 class="card-title text-center my-5">. . .</h1>
+                <h1 class="card-title text-center mb-5">with ingredients in your fridge?</h1>
+            </div>
+            <div class="card-body">
+                <div class="row row-cols-1 row-cols-sm-1 row-cols-lg-3">
+                    <div class="col">
+                        <div class="my-3 card example-group card-effect">
+                            <div class="card-body">
+                                <img  class="card-img-top my-3" src="https://www.letemgastrosvetem.cz/wp-content/uploads/2017/03/IMG_3316-1-900x450.jpg" alt="Hamburger image">
+                                <h3 class="card-title text-center mb-3">Hamburger ?</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="my-3 card example-group card-effect">
+                            <div class="card-body">
+                                <img class="card-img-top my-3" src="https://www.letemgastrosvetem.cz/wp-content/uploads/2020/03/hranolkypaulus-3570-900x450.jpg" alt="French fries image">
+                                <h3 class="card-title text-center mb-3">French fries ?</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="my-3 card example-group card-effect">
+                            <div class="card-body">
+                                <img class="card-img-top my-3" src="https://cdn.alza.cz/Foto/ImgGalery/Image/Article/lgthumb/parni-hrnce-nahled.jpg" alt="French fries image">
+                                <h3 class="card-title text-center mb-3">Salad ?</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer card-footer-index text-center">
+                <h1 class="mt-5">No?</h1>
+                <h1 class="my-5">. . .</h1>
+                <button class="btn btn-primary btn-lg mb-5"><a class="text-white text-decoration-none" href="/auth/register">Let's find out!</a></button>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
